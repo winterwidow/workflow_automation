@@ -1,4 +1,5 @@
 import openai
+import json
 import scraping  #.py file for pasring and scraping the reviews
 
 key=open("api_key_2.txt",'r').read()
@@ -45,8 +46,19 @@ def get_chat_response(messages, model="gpt-4o"):
 
 # Get the response from the model
 response_content = get_chat_response(messages)
-print("Response from the model:")
-print(response_content)
+
+if response_content:
+    print("Response from the model:")
+    print(response_content)
+
+    # Save the response content to a JSON file
+    output_file_path = "output_response.json"
+    with open(output_file_path, 'w') as json_file:
+        json.dump({"response": response_content}, json_file, indent=4)
+    
+    print(f"Response saved to {output_file_path}")
+else:
+    print("Failed to get a response from the model.")
 
 '''
 messages=[{"role":"user", "content":"say hello world!"}]
