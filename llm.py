@@ -2,7 +2,7 @@ import openai
 import json
 import scraping  #.py file for pasring and scraping the reviews
 
-key=open("api_key_2.txt",'r').read()
+key=open("api_key.txt",'r').read()
 openai.api_key = key
 
 reviews = scraping.output['reviews']  #reviews from scarping file
