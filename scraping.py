@@ -80,7 +80,7 @@ def scrape_reviews(url,max_scrolls=100,scroll_pause_time=50):
 #main
 
 url="https://play.google.com/store/apps/details?id=com.lumoslabs.lumosity&hl=en_IN"
-reviews = scrape_reviews(url)
+reviews = scrape_reviews(url) 
 
 '''#reviews_final=reviews[3:]
 for review in reviews:
@@ -93,3 +93,6 @@ output = {
     "reviews" : reviews,
     "review_count" : len(reviews)
 }
+
+#print(len(reviews))  #20
+#print(type(reviews))  #list
