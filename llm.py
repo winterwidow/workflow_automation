@@ -19,11 +19,11 @@ messages = [
     {"role": "system", "content": "You are a helpful assistant."},
 
     {"role": "user", "content": f"These are the {review_count} reviews from the app store for Lumosity:\n{formatted_reviews}\n\n"
-                                "I want to use these reviews to come up with an onboarding form with rating questions, select/multi-select or a swipe layout to understand preferences so that we can personalize the experience. Also, the onboarding is as much about preferences as it is about education."},
+                                "I want to use these reviews to come up with an onboarding form titled onboarding_form with rating questions, select/multi-select or a swipe layout to understand preferences so that we can personalize the experience. Also, the onboarding is as much about preferences as it is about education."},
 
-    {"role": "user", "content": "ignore free users complaining about some premium features etc.Make questions more nuanced. "},
+    {"role": "user", "content": "ignore free users complaining about some premium features etc. Make questions more nuanced. We can use the format of asking a few questions, and then education content."},
 
-    {"role": "user", "content": "The initial question for a block can be rating questions on a scale of 1 to 5. The educational content can be presented as a series of 2-3 slides with images and H1/H2 text. Provide this as a JSON object, including question type, question text, and possible responses."}
+    {"role": "user", "content": "The first 5 questions for a block can be rating questions on a scale of 1 to 5. The educational content labelled educational_content can be presented as a series of 3 slides with H1/H2 text labelled H1_text and H2_text respectively and images for these 3 questions.Educational questions reflect on what the app offers. Provide this as a JSON object(including question type, question text, and possible responses). "}
 ]
 
 def get_chat_response(messages, model="gpt-4o"):
