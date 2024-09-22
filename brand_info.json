@@ -1,0 +1,20 @@
+```json
+{
+    "brand_info": {
+        "primary_colour": "#50ff2a",
+        "secondary_colour": "#ff2a48"
+    },
+    "font": {
+        "font_type": "Arial",
+        "colour": "#ffffff"
+    },
+    "logo": {
+        "font_type": "Helvetica",
+        "colour": "#4850ff"
+    },
+    "button": {
+        "colour": "#2a4850",
+        "font_type": "Verdana"
+    }
+}
+```

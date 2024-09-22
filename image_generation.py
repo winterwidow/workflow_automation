@@ -73,36 +73,6 @@ def extract_data(content):
 
 
     print("entered extract_data function") #debug -- works
-
-    '''try:
-        # Step 1: Read the file content
-        with open(filepath, 'r') as file:
-            content = file.read()
-
-        # Step 2: Use regex to find the JSON block within the text
-        # Extract the JSON object inside the triple backticks
-        json_match = re.search(r'```json\s*([\s\S]*?)```', content)
-        
-        if json_match:
-            json_string = json_match.group(1).strip()
-            
-            # Clean up the JSON string
-            json_string = json_string.replace('\\"', '"')  # Replace escaped quotes
-            json_string = re.sub(r'\s+', ' ', json_string)  # Replace all whitespace (including newlines) with a single space
-            json_string = json_string.strip()  # Remove any leading or trailing whitespace
-            
-            print(f"Extracted JSON string: {json_string}")  # Debugging output
-
-            # Step 3: Load the JSON string into a Python object
-            try:
-                json_data = json.loads(json_string)
-                return json_data
-            except json.JSONDecodeError as e:
-                print(f"Error decoding JSON: {e}")
-                return None
-        else:
-            print("No JSON found in the response string.")
-            return None'''
     
     try:
         # Find the positions of the first '{' and the last '}'
@@ -199,10 +169,10 @@ if json_response:
             print("entered educational_slides for-loop")#debug
 
             header1 = slide.get('H1_text', '')
-            header2 = slide.get('H2_text', '')j
+            header2 = slide.get('H2_text', '')
 
             # Prompt for generating image
-            add_info= "Make sure image conveys meaning behind the given header texts in the form of pictures."
+            add_info= "Images should match the meaning of the headers."
             add_info2="No text in the images \n"
             prompt = f"{header1} - {header2}"
 
