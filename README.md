@@ -13,5 +13,5 @@ numpy,
 pytesseract
 
 system specific lines:
-image_generation : 121
+image_generation : 121 ; 
 brand_elements : 10, 111
