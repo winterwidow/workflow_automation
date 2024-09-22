@@ -5,6 +5,7 @@ from collections import Counter
 from io import BytesIO
 import numpy as np
 import json
+import image_generation
 
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Windows path
 
@@ -24,6 +25,7 @@ def extract_text_from_image(image_path):
         text = data['text'][i].strip()
 
         if text:
+
             #capture text along with its bounding box size and position
             left = data['left'][i]
             top = data['top'][i]
@@ -54,8 +56,7 @@ def extract_colours_from_image(image_path, num_colours=5):
     hex_colours = [{'colour': rgb_to_hex(colour), 'count': count} for colour, count in most_common_colours]
     return hex_colours
 
-
-#get brand elements
+#get brand elements together
 def analyze_brand(image_path):
 
     """Main function to analyze the brand details from an image"""
@@ -104,9 +105,8 @@ def rgb_to_hex(rgb):
     print(rgb)
     return '#{:02x}{:02x}{:02x}'.format(rgb[0], rgb[1], rgb[2])
 
-
 #main
 image_path = "C:/Users/naija/Coding/onboarding/lumosity2.png"
 brand_info = analyze_brand(image_path)
 
-print(brand_info)
+print("brand_info\n", brand_info)

@@ -17,7 +17,7 @@ import time
 
 def scrape_reviews(url,max_scrolls=100,scroll_pause_time=50):
 
-    # Set up Selenium with headless Chrome
+    #set up Selenium with headless Chrome
 
     chrome_options = Options()
     chrome_options.add_argument("--headless")  # Run in headless mode
@@ -27,7 +27,7 @@ def scrape_reviews(url,max_scrolls=100,scroll_pause_time=50):
     #url finder
     driver.get(url)
 
-    # Click the "see all reviews" button if it exists
+    #click the "see all reviews" button if it exists
     try:
         # Wait until the button is clickable and then click it
         see_all_button = WebDriverWait(driver, 10).until(
@@ -54,7 +54,7 @@ def scrape_reviews(url,max_scrolls=100,scroll_pause_time=50):
             EC.presence_of_element_located((By.CLASS_NAME, 'h3YV2d'))
         )
 
-        # Parse and collect reviews
+        #parse and collect reviews
         soup = BeautifulSoup(driver.page_source, 'html.parser')
         div_elements = soup.find_all('div', class_='h3YV2d')
         new_reviews=[div.text.strip() for div in div_elements]
@@ -66,12 +66,12 @@ def scrape_reviews(url,max_scrolls=100,scroll_pause_time=50):
             last_review_count = len(reviews)
 
         else:
-            break  # Stop if no new reviews are found
+            break  #stop if no new reviews are found
 
-        # Scroll down to the bottom of the page
+        #scroll down to the bottom of the page
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         
-        # Wait for new content to load
+        #wait for new content to load
         time.sleep(scroll_pause_time)
 
     driver.quit()
@@ -82,17 +82,7 @@ def scrape_reviews(url,max_scrolls=100,scroll_pause_time=50):
 url="https://play.google.com/store/apps/details?id=com.lumoslabs.lumosity&hl=en_IN"
 reviews = scrape_reviews(url) 
 
-'''#reviews_final=reviews[3:]
-for review in reviews:
-     print(review)
-     print()
-     print()
-print(len(reviews)) #20'''
-
 output = {
     "reviews" : reviews,
     "review_count" : len(reviews)
 }
-
-#print(len(reviews))  #20
-#print(type(reviews))  #list

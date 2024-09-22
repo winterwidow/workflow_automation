@@ -6,15 +6,11 @@ key=open("api_key.txt",'r').read()
 openai.api_key = key
 
 reviews = scraping.output['reviews']  #reviews from scarping file
-#reviews = reviews[:10]
 review_count = str(scraping.output['review_count'])  #num of reviews recieved/parsed
 
-#print(review_count)
-
-# Convert reviews to a single string, separated by new lines
+#convert reviews to a single string, separated by new lines
 formatted_reviews = "\n".join(reviews)
 
-# Format the prompts as messages 
 messages = [
     {"role": "system", "content": "You are a helpful assistant."},
 
@@ -30,7 +26,6 @@ def get_chat_response(messages, model="gpt-4o"):
 
     try:
 
-        # Send the request to the OpenAI API
         response = openai.ChatCompletion.create(
             model=model,
             messages=messages,
@@ -44,14 +39,14 @@ def get_chat_response(messages, model="gpt-4o"):
         print(f"An error occurred: {e}")
         return None
 
-# Get the response from the model
+#get the response from the model
 response_content = get_chat_response(messages)
 
 if response_content:
     print("Response from the model:")
     print(response_content)
 
-    # Save the response content to a JSON file
+    #save the response content to a JSON file
     output_file_path = "output_response.json"
     with open(output_file_path, 'w') as json_file:
         json.dump({"response": response_content}, json_file, indent=4)
@@ -59,13 +54,3 @@ if response_content:
     print(f"Response saved to {output_file_path}")
 else:
     print("Failed to get a response from the model.")
-
-'''
-messages=[{"role":"user", "content":"say hello world!"}]
-response = openai.ChatCompletion.create(
-    model="gpt-4",  # You can also use "gpt-3.5-turbo" for cheaper/quicker results
-    messages=messages
-)
-
-print(response['choices'][0]['message']['content'])
-'''

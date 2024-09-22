@@ -1,6 +1,6 @@
 import openai
 import json
-#import llm
+import llm
 import requests
 import re
 
@@ -8,7 +8,8 @@ key=open("api_key.txt",'r').read()
 openai.api_key = key
 
 def extract_json_object(response_text):
-    # Identify the starting point of the JSON object
+
+    #identify the starting point of the JSON object
     start_idx = response_text.find('{')
     if start_idx == -1:
         print("No opening brace found.")
@@ -43,23 +44,21 @@ def load_json(filepath):
     try:
         with open(filepath, 'r') as file:
             content = file.read()
-        #print(content)  # Debug: Print the full content
 
-        # Parse the content to a Python dictionary
         data = json.loads(content)
         
-        # Extract the "response" field
+        #extract the "response" field
         response_text = data.get("response", "")
         
-        # Extract the embedded JSON object within the "response" string
+        #extract the embedded JSON object within the "response" string
         embedded_json_str = extract_json_object(response_text)
         
         if embedded_json_str:
-            # Parse the extracted JSON string to ensure it's valid JSON
+            #check validity of json
             embedded_json = json.loads(embedded_json_str)
             
-            # Store the extracted JSON object as a string (or return it as a dictionary)
-            return json.dumps(embedded_json, indent=4)  # Returns as a pretty-printed JSON string
+            #store the extracted JSON object as a string (or return it as a dictionary)
+            return json.dumps(embedded_json, indent=4)  
             
         else:
             print("No JSON object found in the 'response' field.")
@@ -70,9 +69,6 @@ def load_json(filepath):
         return None
 
 def extract_data(content):
-
-
-    print("entered extract_data function") #debug -- works
     
     try:
         # Find the positions of the first '{' and the last '}'
@@ -82,8 +78,9 @@ def extract_data(content):
         if json_start != -1 and json_end != -1:
             json_str = content[json_start:json_end + 1]
             json_data = json.loads(json_str)
-            print("Successfully extracted JSON!")  # Debugging line
+            print("Successfully extracted JSON!")  #debugging line
             return json_data
+        
         else:
             print("No JSON object found in the content.")
             return None
@@ -99,15 +96,14 @@ def generate_image(prompt):
 
         print(f"Calling OpenAI API with prompt: {prompt}") 
         
-        # Call the DALL-E API to generate the image
         response = openai.Image.create(
             prompt=prompt,
             n=1,  # Number of images to generate
             size="1024x1024"  # Image size
         )
 
-        print(f"API response: {response}")  # Debugging line
-        # Extract the image URL from the response
+        print(f"API response: {response}")  #debugging line
+        #extract the image URL from the response
         image_url = response['data'][0]['url']
 
         print(f"Generated image URL: {image_url}")
@@ -122,9 +118,9 @@ def download_and_save_image(image_url, slide_id):
         response = requests.get(image_url)
 
         if response.status_code == 200:
-            file_name = f"C:/Users/naija\AppData/Local/Programs/Python/Python310/Scripts/python progs/onboarding/onboarding/images/slide_{slide_id}.png"
+            file_name = f"C:/Users/naija/AppData/Local/Programs/Python/Python310/Scripts/python progs/onboarding/onboarding/images/slide_{slide_id}.png" #change according to system
 
-            with open(file_name, 'wb') as file:  #filename needs to be written
+            with open(file_name, 'wb') as file:  
                 file.write(response.content)
 
             print(f"Image successfully saved as {file_name}")
@@ -140,14 +136,9 @@ def download_and_save_image(image_url, slide_id):
 
 #main
 
-#print("calling load_json function")  #debug
 json_string= load_json('output_response.json')
-#print("successfully executed load_json")  #debug
-#print(json_string)
 
-#print("calling extract_data function")  #debug -- works
 json_response = extract_data(json_string)
-#print("sucessfully executed extract_data fnction")#debug -- works
 
 if json_response:
     print("Extracted JSON response:", json_response)  #debug -- works
