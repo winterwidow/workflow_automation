@@ -7,7 +7,8 @@ import numpy as np
 import json
 import image_generation
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Windows path
+#pytesseract.pytesseract.tesseract_cmd = r'Tesseract-OCR\tesseract.exe'  # Windows path
+pytesseract.pytesseract.tesseract_cmd = r'tesseract' 
 
 key=open("api_key.txt",'r').read()
 openai.api_key = key

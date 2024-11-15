@@ -114,6 +114,7 @@ def generate_image(prompt):
         print(f"Error generating image: {e}")
 
 def download_and_save_image(image_url, slide_id):
+    #need to save it back into json output
     try:
         response = requests.get(image_url)
 
@@ -136,7 +137,7 @@ def download_and_save_image(image_url, slide_id):
 
 #main
 
-json_string= load_json('output_response.json')
+'''json_string= load_json('output_response.json')
 
 json_response = extract_data(json_string)
 
@@ -185,8 +186,57 @@ if json_response:
                     print(f"Failed to save image for slide {slide_id}")
             else:
                 print(f"Failed to generate image for slide {slide.get('slide', 'unknown')}")
-            break
+            #break
     else:
         print("Failed to find 'educational_content' in the onboarding form.")
 else:
     print("Failed to extract and load the JSON response.")
+'''
+json_data=load_json('output_response.json') #json with data
+
+#generates image
+if json_data:
+    print("extracted json response: ",json_data)
+
+    #educational_slides=json_data.get('educational_content', [])
+
+    # Extract 'onboarding_form' and 'educational_content' directly from json_response
+    onboarding_form_list = json_data.get('onboarding_form', [])
+    educational_slides = json_data.get('educational_content', [])
+
+    # Check if educational_slides was successfully extracted
+    if educational_slides:
+        print("Educational Slides:", educational_slides)
+    else:
+        print("No educational content found.")
+
+        #each slide in educational content
+    for slide in educational_slides:
+        header1=slide.get('H1_text','')
+        header2=slide.get('H2_text','')
+
+        add_info= "Images should match the meaning of the headers."
+        add_info2="No text in the images \n"
+        prompt = f"{header1} - {header2}"
+        message= f"{add_info}.{add_info2}.{prompt}"
+
+        print()
+        print(f"Generating image with prompt: {prompt}")  #debugging line
+        print("calling generate_image function")#debug
+        image_url = generate_image(message)
+        print("sucessfully executed generate_image function") #debug
+
+        if image_url:
+            slide['generated_image_url']=image_url
+            print(f"added generated image url for slide {slide.get('slide','unknown')}")
+
+    #save to new json
+    with open('updated_output_response.json','w')as file:
+        json.dump(json_data,file, indent=4)
+    print('updated response saved to json')
+    #else:
+     #   print("Failed to find 'educational_content' in the json file")
+else:
+    print("failed to extract and load the json data")
+
+            

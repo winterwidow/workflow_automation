@@ -15,11 +15,57 @@ messages = [
     {"role": "system", "content": "You are a helpful assistant."},
 
     {"role": "user", "content": f"These are the {review_count} reviews from the app store for Lumosity:\n{formatted_reviews}\n\n"
-                                "I want to use these reviews to come up with an onboarding form titled onboarding_form with rating questions, select/multi-select or a swipe layout to understand preferences so that we can personalize the experience. Also, the onboarding is as much about preferences as it is about education."},
+                                "I want to use these reviews to create an onboarding form called `onboarding_form` with rating questions, select/multi-select options, or a swipe layout. The purpose of this form is to understand user preferences for a more personalized experience. Additionally, this onboarding should educate users on the app's offerings"},
 
-    {"role": "user", "content": "ignore free users complaining about some premium features etc. Make questions more nuanced. We can use the format of asking a few questions, and then education content."},
+    {"role": "user", "content": "ignore free users complaining about missing premium features. Make questions more nuanced to reflect deeper insights into user needs. We can structure it by asking a few preference questions, followed by educational content."},
 
-    {"role": "user", "content": "The first 5 questions for a block can be rating questions on a scale of 1 to 5. The educational content labelled educational_content can be presented as a series of 3 slides with H1/H2 text labelled H1_text and H2_text respectively and images for these 3 questions.Educational questions reflect on what the app offers. Provide this as a JSON object(including question type, question text, and possible responses). "}
+    {"role": "user", "content": (
+        "The first five questions should be rating questions on a scale of 1 to 5. For educational content, include three slides labeled as `educational_content`, each with `H1_text`, `H2_text`, and an image. The educational slides should highlight the app's key benefits."
+        "Here’s an example format in JSON:\n\n"
+        "{\n"
+        "  \"onboarding_form\": [\n"
+        "    {\n"
+        "      \"question_type\": \"rating\",\n"
+        "      \"question_text\": \"How would you rate your interest in improving memory skills?\",\n"
+        "      \"responses\": [\n"
+        "        \"1 - Not interested\",\n"
+        "        \"2 - Slightly interested\",\n"
+        "        \"3 - Moderately interested\",\n"
+        "        \"4 - Very interested\",\n"
+        "        \"5 - Extremely interested\"\n"
+        "      ]\n"
+        "    },\n"
+        "    {\n"
+        "      \"question_type\": \"rating\",\n"
+        "      \"question_text\": \"How motivated are you to improve your attention span?\",\n"
+        "      \"responses\": [\n"
+        "        \"1 - Not motivated\",\n"
+        "        \"2 - Slightly motivated\",\n"
+        "        \"3 - Moderately motivated\",\n"
+        "        \"4 - Very motivated\",\n"
+        "        \"5 - Extremely motivated\"\n"
+        "      ]\n"
+        "    }\n"
+        "  ],\n"
+        "  \"educational_content\": [\n"
+        "    {\n"
+        "      \"H1_text\": \"Unlock Your Full Cognitive Potential\",\n"
+        "      \"H2_text\": \"Discover games that enhance your memory, attention, and problem-solving skills.\",\n"
+        "      \"image\": \"image1.jpg\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"H1_text\": \"Daily Workouts\",\n"
+        "      \"H2_text\": \"Engage with a variety of cognitive exercises designed to challenge different aspects of your brain every day.\",\n"
+        "      \"image\": \"image2.jpg\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"H1_text\": \"Track Your Progress\",\n"
+        "      \"H2_text\": \"Access detailed reports and insights to monitor your improvement and stay motivated.\",\n"
+        "      \"image\": \"image3.jpg\"\n"
+        "    }\n"
+        "  ]\n"
+        "}"
+    )}
 ]
 
 def get_chat_response(messages, model="gpt-4o"):
