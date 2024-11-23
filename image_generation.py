@@ -53,12 +53,15 @@ def load_json(filepath):
         #extract the embedded JSON object within the "response" string
         embedded_json_str = extract_json_object(response_text)
         
-        if embedded_json_str:
+        '''if embedded_json_str:
             #check validity of json
             embedded_json = json.loads(embedded_json_str)
             
             #store the extracted JSON object as a string (or return it as a dictionary)
-            return json.dumps(embedded_json, indent=4)  
+            return json.dumps(embedded_json, indent=4)  '''
+        
+        if embedded_json_str:
+            return json.loads(embedded_json_str)  #parses to a dictionary not string
             
         else:
             print("No JSON object found in the 'response' field.")
@@ -194,13 +197,12 @@ if json_response:
 else:
     print("Failed to extract and load the JSON response.")
 '''
-json_data=load_json('output_response.json') #json with data
 
-#generates image
+json_data=load_json('output_response.json') #json with data
+#json data storing as dict
+
 if json_data:
     print("extracted json response: ",json_data)
-
-    #educational_slides=json_data.get('educational_content', [])
 
     # Extract 'onboarding_form' and 'educational_content' directly from json_response
     onboarding_form_list = json_data.get('onboarding_form', [])
@@ -237,10 +239,13 @@ if json_data:
         #save to new json
         with open('updated_output_response.json','w')as file:
             json.dump(json_data,file, indent=4)
-            print('updated response saved to json')
+        print('updated response saved to json')
     else:
         print("Failed to find 'educational_content' in the json file")
 else:
     print("failed to extract and load the json data")
+
+print("\n UPDATED JSON:\n\n\n")
+print("Updated JSON:\n", json.dumps(json_data, indent=4))
 
             

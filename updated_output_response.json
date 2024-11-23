@@ -1,0 +1,79 @@
+{
+    "onboarding_form": [
+        {
+            "question_type": "rating",
+            "question_text": "How would you rate your interest in improving memory skills?",
+            "responses": [
+                "1 - Not interested",
+                "2 - Slightly interested",
+                "3 - Moderately interested",
+                "4 - Very interested",
+                "5 - Extremely interested"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How motivated are you to improve your attention span?",
+            "responses": [
+                "1 - Not motivated",
+                "2 - Slightly motivated",
+                "3 - Moderately motivated",
+                "4 - Very motivated",
+                "5 - Extremely motivated"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How important is it for you to enhance your problem-solving abilities?",
+            "responses": [
+                "1 - Not important",
+                "2 - Slightly important",
+                "3 - Moderately important",
+                "4 - Very important",
+                "5 - Extremely important"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How interested are you in tracking your cognitive improvement over time?",
+            "responses": [
+                "1 - Not interested",
+                "2 - Slightly interested",
+                "3 - Moderately interested",
+                "4 - Very interested",
+                "5 - Extremely interested"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How appealing is a personalized brain training experience to you?",
+            "responses": [
+                "1 - Not appealing",
+                "2 - Slightly appealing",
+                "3 - Moderately appealing",
+                "4 - Very appealing",
+                "5 - Extremely appealing"
+            ]
+        }
+    ],
+    "educational_content": [
+        {
+            "H1_text": "Unlock Your Full Cognitive Potential",
+            "H2_text": "Discover games that enhance your memory, attention, and problem-solving skills.",
+            "image": "image1.jpg",
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-ov8HgLLRNav9nRzz3aU1BY4h.png?st=2024-11-23T06%3A24%3A07Z&se=2024-11-23T08%3A24%3A07Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-23T00%3A12%3A21Z&ske=2024-11-24T00%3A12%3A21Z&sks=b&skv=2024-08-04&sig=j1dTku6qf0ECpmooorz%2BRtrjblzikYtGJkfHRo1H1d8%3D"
+        },
+        {
+            "H1_text": "Daily Workouts",
+            "H2_text": "Engage with a variety of cognitive exercises designed to challenge different aspects of your brain every day.",
+            "image": "image2.jpg",
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-1Uy3dzb0Dj0jt084S2Gl1Uk8.png?st=2024-11-23T06%3A24%3A19Z&se=2024-11-23T08%3A24%3A19Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-23T00%3A05%3A05Z&ske=2024-11-24T00%3A05%3A05Z&sks=b&skv=2024-08-04&sig=S60Saz3eUajMi6a3xLKG0/XHFeo23OuR0SpKZxoGKpI%3D"
+        },
+        {
+            "H1_text": "Track Your Progress",
+            "H2_text": "Access detailed reports and insights to monitor your improvement and stay motivated.",
+            "image": "image3.jpg",
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-H60N6OvzUzMFq5d0R7UM2Z5e.png?st=2024-11-23T06%3A24%3A30Z&se=2024-11-23T08%3A24%3A30Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-23T00%3A06%3A35Z&ske=2024-11-24T00%3A06%3A35Z&sks=b&skv=2024-08-04&sig=SJrHVCcI9Ufic4BgL6llr7QZQKqC/GeBPufDIVrk97Q%3D"
+        }
+    ]
+}
