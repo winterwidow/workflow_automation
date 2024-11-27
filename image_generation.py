@@ -236,10 +236,16 @@ if json_data:
                 slide['generated_image_url']=image_url
                 print(f"added generated image url for slide {slide.get('slide','unknown')}")
 
-        #save to new json
+        '''#save to new json
         with open('updated_output_response.json','w')as file:
             json.dump(json_data,file, indent=4)
-        print('updated response saved to json')
+        print('updated response saved to json')'''
+
+        #update original json 
+        with open('output_response.json', 'w') as file:
+            json.dump(json_data, file, indent=4)
+        print("updated image url to json")
+        
     else:
         print("Failed to find 'educational_content' in the json file")
 else:

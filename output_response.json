@@ -1,3 +1,79 @@
 {
-    "response": "Based on your requirements and the feedback from the app's reviews, I've prepared a JSON structure for the `onboarding_form` with five rating questions followed by three educational slides. Here's the structured format:\n\n```json\n{\n  \"onboarding_form\": [\n    {\n      \"question_type\": \"rating\",\n      \"question_text\": \"How would you rate your interest in improving memory skills?\",\n      \"responses\": [\n        \"1 - Not interested\",\n        \"2 - Slightly interested\",\n        \"3 - Moderately interested\",\n        \"4 - Very interested\",\n        \"5 - Extremely interested\"\n      ]\n    },\n    {\n      \"question_type\": \"rating\",\n      \"question_text\": \"How motivated are you to improve your attention span?\",\n      \"responses\": [\n        \"1 - Not motivated\",\n        \"2 - Slightly motivated\",\n        \"3 - Moderately motivated\",\n        \"4 - Very motivated\",\n        \"5 - Extremely motivated\"\n      ]\n    },\n    {\n      \"question_type\": \"rating\",\n      \"question_text\": \"How important is it for you to enhance your problem-solving abilities?\",\n      \"responses\": [\n        \"1 - Not important\",\n        \"2 - Slightly important\",\n        \"3 - Moderately important\",\n        \"4 - Very important\",\n        \"5 - Extremely important\"\n      ]\n    },\n    {\n      \"question_type\": \"rating\",\n      \"question_text\": \"How interested are you in tracking your cognitive improvement over time?\",\n      \"responses\": [\n        \"1 - Not interested\",\n        \"2 - Slightly interested\",\n        \"3 - Moderately interested\",\n        \"4 - Very interested\",\n        \"5 - Extremely interested\"\n      ]\n    },\n    {\n      \"question_type\": \"rating\",\n      \"question_text\": \"How appealing is a personalized brain training experience to you?\",\n      \"responses\": [\n        \"1 - Not appealing\",\n        \"2 - Slightly appealing\",\n        \"3 - Moderately appealing\",\n        \"4 - Very appealing\",\n        \"5 - Extremely appealing\"\n      ]\n    }\n  ],\n  \"educational_content\": [\n    {\n      \"H1_text\": \"Unlock Your Full Cognitive Potential\",\n      \"H2_text\": \"Discover games that enhance your memory, attention, and problem-solving skills.\",\n      \"image\": \"image1.jpg\"\n    },\n    {\n      \"H1_text\": \"Daily Workouts\",\n      \"H2_text\": \"Engage with a variety of cognitive exercises designed to challenge different aspects of your brain every day.\",\n      \"image\": \"image2.jpg\"\n    },\n    {\n      \"H1_text\": \"Track Your Progress\",\n      \"H2_text\": \"Access detailed reports and insights to monitor your improvement and stay motivated.\",\n      \"image\": \"image3.jpg\"\n    }\n  ]\n}\n```\n\nThese rating questions aim to delve deeper into users' motivations and preferences. The educational content is structured to educate users about the app's core benefits and features, helping them understand what the app offers to enhance their cognitive skills."
+    "onboarding_form": [
+        {
+            "question_type": "rating",
+            "question_text": "How would you rate your interest in improving memory skills?",
+            "responses": [
+                "1 - Not interested",
+                "2 - Slightly interested",
+                "3 - Moderately interested",
+                "4 - Very interested",
+                "5 - Extremely interested"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How motivated are you to improve your attention span?",
+            "responses": [
+                "1 - Not motivated",
+                "2 - Slightly motivated",
+                "3 - Moderately motivated",
+                "4 - Very motivated",
+                "5 - Extremely motivated"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How interested are you in enhancing your problem-solving skills?",
+            "responses": [
+                "1 - Not interested",
+                "2 - Slightly interested",
+                "3 - Moderately interested",
+                "4 - Very interested",
+                "5 - Extremely interested"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How do you rate your enthusiasm for improving flexibility in thinking?",
+            "responses": [
+                "1 - Not enthusiastic",
+                "2 - Slightly enthusiastic",
+                "3 - Moderately enthusiastic",
+                "4 - Very enthusiastic",
+                "5 - Extremely enthusiastic"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How important is it for you to track your cognitive development over time?",
+            "responses": [
+                "1 - Not important",
+                "2 - Slightly important",
+                "3 - Moderately important",
+                "4 - Very important",
+                "5 - Extremely important"
+            ]
+        }
+    ],
+    "educational_content": [
+        {
+            "H1_text": "Unlock Your Full Cognitive Potential",
+            "H2_text": "Discover games that enhance your memory, attention, and problem-solving skills.",
+            "image": "image1.jpg",
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-tlWpPaSbtCMIU7oMcZhnLiZE.png?st=2024-11-25T09%3A06%3A54Z&se=2024-11-25T11%3A06%3A54Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-25T00%3A33%3A57Z&ske=2024-11-26T00%3A33%3A57Z&sks=b&skv=2024-08-04&sig=lPmVW/xMvPv2wV9Qqy8XhMk4SuolhLJwewlhq%2BTp0zk%3D"
+        },
+        {
+            "H1_text": "Daily Workouts",
+            "H2_text": "Engage with a variety of cognitive exercises designed to challenge different aspects of your brain every day.",
+            "image": "image2.jpg",
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-27a4COUgItqEOwi6x4mjsv9g.png?st=2024-11-25T09%3A07%3A06Z&se=2024-11-25T11%3A07%3A06Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-25T00%3A41%3A34Z&ske=2024-11-26T00%3A41%3A34Z&sks=b&skv=2024-08-04&sig=I3Z/Gryf3cqzzfFvQhNW23OzNykS96JqsPP7Wo%2B3TBk%3D"
+        },
+        {
+            "H1_text": "Track Your Progress",
+            "H2_text": "Access detailed reports and insights to monitor your improvement and stay motivated.",
+            "image": "image3.jpg",
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-MpJ9qQAMP4n09eRGGYoE00aN.png?st=2024-11-25T09%3A07%3A17Z&se=2024-11-25T11%3A07%3A17Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-25T00%3A19%3A04Z&ske=2024-11-26T00%3A19%3A04Z&sks=b&skv=2024-08-04&sig=VAdrsaqRKbCD1a5q9FecCxnoY8JBs9FYK4eiPZDoiJE%3D"
+        }
+    ]
 }
