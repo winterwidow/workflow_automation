@@ -1,11 +1,11 @@
 import openai 
 from PIL import Image
-import pytesseract
+import pytesseract  
 from collections import Counter
 from io import BytesIO
 import numpy as np
-import json
-import image_generation
+import json  
+import image_generation  
 
 #pytesseract.pytesseract.tesseract_cmd = r'Tesseract-OCR\tesseract.exe'  # Windows path
 pytesseract.pytesseract.tesseract_cmd = r'tesseract' 
@@ -108,6 +108,7 @@ def rgb_to_hex(rgb):
 
 #main
 image_path = "C:/Users/naija/Coding/onboarding/lumosity2.png"
+#image_path = f"" #path to lumosity instead of image
 brand_info = analyze_brand(image_path)
 
 print("brand_info\n", brand_info)

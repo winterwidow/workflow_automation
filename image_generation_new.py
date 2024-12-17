@@ -3,6 +3,7 @@ import json
 import llm
 import requests
 import re
+import os
 
 key=open("api_key.txt",'r').read()
 openai.api_key = key
@@ -92,22 +93,24 @@ def extract_data(content):
         print(f"Error reading the file: {e}")
         return None
 
-def generate_image(prompt):  #response function is changed in new file
+def generate_image(prompt):
     print("enetred generetae_image")#debug
 
     try:
 
         print(f"Calling OpenAI API with prompt: {prompt}") 
         
-        response = openai.Image.create(
+        response = openai.images.generate(
+            model="dall-e-3",
             prompt=prompt,
             n=1,  # Number of images to generate
+            quality="standard",
             size="1024x1024"  # Image size
         )
 
         print(f"API response: {response}")  #debugging line
         #extract the image URL from the response
-        image_url = response['data'][0]['url']
+        image_url = response.data[0].url
 
         print(f"Generated image URL: {image_url}")
         print(f"Generated image URL: {image_url}")
@@ -118,7 +121,7 @@ def generate_image(prompt):  #response function is changed in new file
 
 def download_and_save_image(image_url, slide_id):
     #need to save it back into json output
-    try:
+    '''try:
         response = requests.get(image_url)
 
         if response.status_code == 200:
@@ -138,6 +141,30 @@ def download_and_save_image(image_url, slide_id):
 
     except Exception as e:
         print(f"An error occurred while downloading the image: {e}")
+        return None'''
+    
+    try:
+        save_dir='images'
+        os.makedirs(save_dir,exist_ok=True)
+
+        file_name=f'slide_{slide_id}.png'
+        file_path=os.path.join(save_dir,file_name)
+
+        #download the image and save it loaclly
+
+        response = requests.get(image_url)
+        if response.status_code == 200:
+            with open(file_path,'wb') as file:
+                file.write(response.content)
+            print(f"Image successfully saved as {file_path}")
+
+            return file_path
+        
+        else:
+            print(f"Failed to download image.\nStatus COde:{response.status_code}")
+            return None
+    except Exception as e:
+        print(f"AN error occured while downloading the image: {e}")
         return None
 
 #main
@@ -208,6 +235,7 @@ if json_data:
     onboarding_form_list = json_data.get('onboarding_form', [])
     educational_slides = json_data.get('educational_content', [])
 
+    image_data = {}
     # Check if educational_slides was successfully extracted
     if educational_slides:
         print("Educational Slides:", educational_slides)
@@ -221,32 +249,49 @@ if json_data:
             header1=slide.get('H1_text','')
             header2=slide.get('H2_text','')
 
-            #prompt changed in new file
-            add_info= "Images should match the meaning of the headers."
-            add_info2="No text in the images \n"
-            prompt = f"{header1} - {header2}"
-            message= f"{add_info}.{add_info2}.{prompt}"
+            # Construct the additional context
+            add_info = (
+                "Create a futuristic, vibrant digital art illustration that will be used in an onboarding flow. "
+                "The image should represent the themes described below, using symbolic visuals only, without including any text."
+            )
+            add_info2 = (
+                "Constraints: a) There should be no text in the image, "
+                "b) The image should visually represent the ideas conveyed in the text as closely as possible."
+            )
+
+            # Combine everything into a properly formatted prompt
+            prompt = f"""{add_info} 
+            {add_info2} 
+            H1: {header1}
+            H2: {header2}"""
 
             print()
             print(f"Generating image with prompt: {prompt}")  #debugging line
             print("calling generate_image function")#debug
-            image_url = generate_image(message)
+            image_url = generate_image(prompt)
             print("sucessfully executed generate_image function") #debug
 
-            if image_url:  #changed in new file
+            '''if image_url:
                 slide['generated_image_url']=image_url
                 print(f"added generated image url for slide {slide.get('slide','unknown')}")
+                download_and_save_image(image_url,slide.get('slide','unknown'))'''
+            
+            if image_url:  #saves to original json
+                slide_id = slide.get('slide', 'unknown')
+                local_image_path = download_and_save_image(image_url, slide_id)
 
-        '''#save to new json
+                '''# Update a separate JSON object with image details
+                image_data[slide_id] = {
+                    "H1_text": header1,
+                    "H2_text": header2,
+                    "generated_image_url": image_url,
+                    "local_image_path": local_image_path
+                }'''
+
+        #save to new json
         with open('updated_output_response.json','w')as file:
             json.dump(json_data,file, indent=4)
-        print('updated response saved to json')'''
-
-        #update original json 
-        with open('output_response.json', 'w') as file:
-            json.dump(json_data, file, indent=4)
-        print("updated image url to json")
-        
+        print('updated response saved to json')
     else:
         print("Failed to find 'educational_content' in the json file")
 else:

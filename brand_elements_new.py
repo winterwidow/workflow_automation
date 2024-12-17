@@ -85,7 +85,7 @@ def analyze_brand(image):
         ],
     )
 
-    output = response.choices[0].message['content'].strip()
+    output = response.choices[0].message.content
 
     #save the JSON in a file
     output_file_path = "brand_info.json"
