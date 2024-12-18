@@ -24,7 +24,7 @@
         },
         {
             "question_type": "rating",
-            "question_text": "How important is it for you to enhance your problem-solving abilities?",
+            "question_text": "How important is it to you to track your cognitive training progress?",
             "responses": [
                 "1 - Not important",
                 "2 - Slightly important",
@@ -35,7 +35,18 @@
         },
         {
             "question_type": "rating",
-            "question_text": "How interested are you in tracking your cognitive improvement over time?",
+            "question_text": "How likely are you to use daily cognitive exercises for brain training?",
+            "responses": [
+                "1 - Not likely",
+                "2 - Slightly likely",
+                "3 - Moderately likely",
+                "4 - Very likely",
+                "5 - Extremely likely"
+            ]
+        },
+        {
+            "question_type": "rating",
+            "question_text": "How would you rate your interest in improving problem-solving skills?",
             "responses": [
                 "1 - Not interested",
                 "2 - Slightly interested",
@@ -43,37 +54,26 @@
                 "4 - Very interested",
                 "5 - Extremely interested"
             ]
-        },
-        {
-            "question_type": "rating",
-            "question_text": "How appealing is a personalized brain training experience to you?",
-            "responses": [
-                "1 - Not appealing",
-                "2 - Slightly appealing",
-                "3 - Moderately appealing",
-                "4 - Very appealing",
-                "5 - Extremely appealing"
-            ]
         }
     ],
     "educational_content": [
         {
             "H1_text": "Unlock Your Full Cognitive Potential",
             "H2_text": "Discover games that enhance your memory, attention, and problem-solving skills.",
-            "image": "image1.jpg",
-            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-ov8HgLLRNav9nRzz3aU1BY4h.png?st=2024-11-23T06%3A24%3A07Z&se=2024-11-23T08%3A24%3A07Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-23T00%3A12%3A21Z&ske=2024-11-24T00%3A12%3A21Z&sks=b&skv=2024-08-04&sig=j1dTku6qf0ECpmooorz%2BRtrjblzikYtGJkfHRo1H1d8%3D"
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-d7Zn0aLXZeqC7g8yYHbqygiQ.png?st=2024-12-18T03%3A06%3A44Z&se=2024-12-18T05%3A06%3A44Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-18T00%3A53%3A32Z&ske=2024-12-19T00%3A53%3A32Z&sks=b&skv=2024-08-04&sig=b4nYjiBOFOWSXLT3d1%2BC0pAvLBhj3hvwnjLZsKlar7s%3D",
+            "local_image_path": "images\\slide_slide_1.png"
         },
         {
             "H1_text": "Daily Workouts",
             "H2_text": "Engage with a variety of cognitive exercises designed to challenge different aspects of your brain every day.",
-            "image": "image2.jpg",
-            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-1Uy3dzb0Dj0jt084S2Gl1Uk8.png?st=2024-11-23T06%3A24%3A19Z&se=2024-11-23T08%3A24%3A19Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-23T00%3A05%3A05Z&ske=2024-11-24T00%3A05%3A05Z&sks=b&skv=2024-08-04&sig=S60Saz3eUajMi6a3xLKG0/XHFeo23OuR0SpKZxoGKpI%3D"
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-LxdhQIpyY1S7oANk7Subs5pi.png?st=2024-12-18T03%3A07%3A04Z&se=2024-12-18T05%3A07%3A04Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-18T00%3A52%3A41Z&ske=2024-12-19T00%3A52%3A41Z&sks=b&skv=2024-08-04&sig=50vBBzAenSGj%2BXJ/n1EbprSAbD2yBR%2BqBWHwZt09L3M%3D",
+            "local_image_path": "images\\slide_slide_2.png"
         },
         {
             "H1_text": "Track Your Progress",
             "H2_text": "Access detailed reports and insights to monitor your improvement and stay motivated.",
-            "image": "image3.jpg",
-            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-H60N6OvzUzMFq5d0R7UM2Z5e.png?st=2024-11-23T06%3A24%3A30Z&se=2024-11-23T08%3A24%3A30Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-11-23T00%3A06%3A35Z&ske=2024-11-24T00%3A06%3A35Z&sks=b&skv=2024-08-04&sig=SJrHVCcI9Ufic4BgL6llr7QZQKqC/GeBPufDIVrk97Q%3D"
+            "generated_image_url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-KvUmZJGIMhuVBNQyymFwI1GU/user-lQOCCxXnqSpmfFHQlU49npKQ/img-Te9XtS2voC681IeqQqtKRbA9.png?st=2024-12-18T03%3A07%3A23Z&se=2024-12-18T05%3A07%3A23Z&sp=r&sv=2024-08-04&sr=b&rscd=inline&rsct=image/png&skoid=d505667d-d6c1-4a0a-bac7-5c84a87759f8&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-12-18T01%3A12%3A21Z&ske=2024-12-19T01%3A12%3A21Z&sks=b&skv=2024-08-04&sig=kP9H2cSBeiYlLVnWhR2RPlcRlPTQshFWaQSnK0QxAbE%3D",
+            "local_image_path": "images\\slide_slide_3.png"
         }
     ]
 }

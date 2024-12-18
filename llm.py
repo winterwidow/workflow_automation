@@ -72,13 +72,13 @@ def get_chat_response(messages, model="gpt-4o"):
 
     try:
 
-        response = openai.ChatCompletion.create(
+        response = openai.chat.completions.create(
             model=model,
             messages=messages,
         )
 
         # Extract the content of the response
-        return response.choices[0].message['content'].strip()
+        return response.choices[0].message.content
     
     except Exception as e:
 
