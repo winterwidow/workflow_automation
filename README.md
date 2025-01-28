@@ -2,7 +2,7 @@
 
 API based : To create an onboarding file
 
-Scrape reviews then use llm to generate the form
+Scrape reviews then use llm to generate the form - prompt engineering + workflow automation
 
 Libraries to download:
 BeautifulSoup,
