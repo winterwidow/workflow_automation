@@ -82,21 +82,6 @@ pip install beautifulsoup4 selenium webdriver-manager openai pillow numpy pytess
 - `requests` - HTTP requests for image downloads
 - `pyautogui` - Screenshot capture
 
-### Tesseract Installation
-
-**Linux/Ubuntu:**
-```bash
-sudo apt-get install tesseract-ocr
-```
-
-**macOS:**
-```bash
-brew install tesseract
-```
-
-**Windows:**
-Download and install from [GitHub releases](https://github.com/UB-Mannheim/tesseract/wiki)
-
 ## Configuration
 
 1. Create an `api_key.txt` file in the project root directory
@@ -164,30 +149,6 @@ This will:
 - Download images to the `images/` directory
 - Update `updated_output_response.json` with image URLs and local paths
 
-## Workflow
-
-```
-1. Scrape Reviews (scraping.py)
-   └─> Extract user feedback from app store
-
-2. Generate Form (llm.py)
-   └─> Analyze reviews with GPT-4
-   └─> Create onboarding questions and educational content
-   └─> Output: output_response.json
-
-3. Extract Brand (brand_elements.py)
-   └─> Capture screenshot
-   └─> Extract colors and text
-   └─> Identify brand elements with GPT-4
-   └─> Output: brand_info.json
-
-4. Generate Images (image_generation.py)
-   └─> Load educational content
-   └─> Create images with DALL-E 3
-   └─> Download and save images
-   └─> Output: updated_output_response.json
-```
-
 ## Output Format
 
 ### Onboarding Form JSON Structure
@@ -240,14 +201,6 @@ This will:
   }
 }
 ```
-
-## Example Use Case
-
-This project was developed to automate the creation of onboarding forms for the Lumosity brain training app. By analyzing user reviews, it identifies key user preferences and pain points to create targeted onboarding questions that:
-- Understand user goals (memory improvement, attention span, etc.)
-- Educate users about app features
-- Personalize the user experience
-- Address common user concerns identified in reviews
 
 ## Notes
 
