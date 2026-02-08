@@ -82,21 +82,6 @@ pip install beautifulsoup4 selenium webdriver-manager openai pillow numpy pytess
 - `requests` - HTTP requests for image downloads
 - `pyautogui` - Screenshot capture
 
-### Tesseract Installation
-
-**Linux/Ubuntu:**
-```bash
-sudo apt-get install tesseract-ocr
-```
-
-**macOS:**
-```bash
-brew install tesseract
-```
-
-**Windows:**
-Download and install from [GitHub releases](https://github.com/UB-Mannheim/tesseract/wiki)
-
 ## Configuration
 
 1. Create an `api_key.txt` file in the project root directory
